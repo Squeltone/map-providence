@@ -99,3 +99,34 @@ function myInit() {
     convaContext.strokeStyle = 'red';
     convaContext.lineWidth = 2;
 }
+function togglePopup(){
+    let popup = document.querySelector("#popup-overlay");
+    popup.classList.toggle("open")
+}
+
+function togglePopup(area) {
+    const popup = document.getElementById('popup-overlay');
+    const iframe = popup.querySelector('iframe');
+    const content = document.getElementById('popup-content-inner');
+
+    // Set the source of the iframe based on the area clicked
+    if (area === 'foyer') {
+        iframe.src = 'images/foyer.jpg';
+    } else if (area === 'salle') {
+        iframe.src = 'images/salle de classe.jpg';
+    } else if (area === 'casier') {
+        iframe.src = 'images/casier.jpg';
+    } else if (area === 'labo') {
+        iframe.src = 'images/labo.jpg';
+    } else if (area === 'mdl') {
+        iframe.src = 'https://momento360.com/e/u/4590d707388c42389091a81aa3c86c81?utm_campaign=embed&utm_source=other&heading=739.85&pitch=5.08&field-of-view=75&size=medium&display-plan=true';
+    }
+
+    // Show the popup
+    popup.style.display = 'block';
+}
+
+function togglePopup() {
+    const popup = document.getElementById('popup-overlay');
+    popup.style.display = (popup.style.display === 'none' || popup.style.display === '') ? 'block' : 'none';
+}
